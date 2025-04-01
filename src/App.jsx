@@ -2,7 +2,13 @@ import "./App.css";
 import "./animate.min.css";
 import "@xyflow/react/dist/style.css";
 import "yadl-ui/dist/yadl-ui.css";
-import { Button, AWS, GCPCertificateManager, YadlPreview } from "yadl-ui";
+import {
+  Button,
+  AWS,
+  GCPCertificateManager,
+  YadlPreview,
+  YadlExport,
+} from "yadl-ui";
 
 function App() {
   const nodes = [
@@ -48,6 +54,7 @@ function App() {
           </div>
         </div>
       </div> */}
+      <YadlExport />
       <div style={{ height: "100vh", width: "100%" }}>
         <YadlPreview nodes={nodes} edges={edges} />
       </div>

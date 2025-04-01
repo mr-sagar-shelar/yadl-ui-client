@@ -2,3 +2,5 @@
 @plugin "daisyui" {
   themes: light --prefersdark, dark --default, cupcake;
 }
+
+@source "../node_modules/yadl-ui";
