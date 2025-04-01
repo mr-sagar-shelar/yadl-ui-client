@@ -55,8 +55,8 @@ function App() {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-row gap-4">
-        <YadlExport width={400} height={800} />
+      <div className="flex flex-row gap-4 w-full">
+        <YadlExport width={800} height={900} />
         {/* <YadlExportNewVersion width={400} height={800} style /> */}
       </div>
       {/* <div style={{ height: "100vh", width: "100%" }}>

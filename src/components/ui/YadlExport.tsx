@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import getBlobDuration from "get-blob-duration";
 import { fixWebmDuration } from "@fix-webm-duration/fix";
 // New FFmpeg Start
@@ -32,6 +32,7 @@ const Box = (props: BoxProps) => {
   let videoEl: HTMLVideoElement;
   let mediaRecorder: MediaRecorder;
   const mimeType = "video/webm;codecs=h264";
+  const mp4VideoRef = useRef<HTMLVideoElement>(null);
 
   const [recordingState, setRecordingState] = useState<RecordingState>(
     RecordingState.none
@@ -129,10 +130,8 @@ const Box = (props: BoxProps) => {
     setConversionState(ConversionState.completed);
 
     const data = await ffmpeg.readFile("output.mp4");
-    const video = document.getElementById("mp4-video");
-    if (video) {
-      // @ts-ignore
-      video.src = URL.createObjectURL(
+    if (mp4VideoRef.current) {
+      mp4VideoRef.current.src = URL.createObjectURL(
         new Blob([data.buffer], { type: "video/mp4" })
       );
     }
@@ -163,7 +162,7 @@ const Box = (props: BoxProps) => {
           <legend className="fieldset-legend">Frame Rate</legend>
           <select
             className="select"
-            onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+            onChange={(event: ChangeEvent<HTMLSelectElement>) => {
               setFrameRate(event.target.value as unknown as number);
             }}
             value={frameRate}
@@ -223,7 +222,7 @@ const Box = (props: BoxProps) => {
           </button>
         )}
         <video
-          id="mp4-video"
+          ref={mp4VideoRef}
           controls
           style={{
             width: "100%",
