@@ -7,8 +7,9 @@ import {
   AWS,
   GCPCertificateManager,
   YadlPreview,
-  YadlExport,
+  // YadlExport,
 } from "yadl-ui";
+import YadlExport from "./components/ui/YadlExport";
 
 function App() {
   const nodes = [
@@ -54,10 +55,13 @@ function App() {
           </div>
         </div>
       </div> */}
-      <YadlExport />
-      <div style={{ height: "100vh", width: "100%" }}>
-        <YadlPreview nodes={nodes} edges={edges} />
+      <div className="flex flex-row gap-4">
+        <YadlExport width={400} height={800} />
+        {/* <YadlExportNewVersion width={400} height={800} style /> */}
       </div>
+      {/* <div style={{ height: "100vh", width: "100%" }}>
+        <YadlPreview nodes={nodes} edges={edges} />
+      </div> */}
     </div>
   );
 }
