@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import getBlobDuration from "get-blob-duration";
 import { fixWebmDuration } from "@fix-webm-duration/fix";
+// New FFmpeg Start
+import { fetchFile } from "@ffmpeg/util";
+import { FFmpeg } from "@ffmpeg/ffmpeg";
+import coreURL from "@ffmpeg/core?url";
+import wasmURL from "@ffmpeg/core/wasm?url";
+// New FFmpeg End
 
 export type BoxProps = {
   text?: string;
@@ -87,12 +93,13 @@ const Box = (props: BoxProps) => {
 
   const convertToMp4 = async () => {
     setConversionState(ConversionState.converting);
+    // New FFmpeg Start
     // @ts-ignore
-    const { fetchFile } = FFmpegUtil;
-    // @ts-ignore
-    const { FFmpeg } = FFmpegWASM;
-    let ffmpeg = null;
-    if (ffmpeg === null) {
+    // const { fetchFile } = FFmpegUtil;
+    // const { FFmpeg } = FFmpegWASM;
+    // New FFmpeg End
+    let ffmpeg;
+    if (ffmpeg === undefined) {
       ffmpeg = new FFmpeg();
       // @ts-ignore
       ffmpeg.on("log", ({ message }) => {
@@ -102,9 +109,12 @@ const Box = (props: BoxProps) => {
       ffmpeg.on("progress", ({ progress, time }) => {
         setConvertionMessage(`${progress * 100} %, time: ${time / 1000000} s`);
       });
-      await ffmpeg.load({
-        coreURL: "/assets/core-mt/package/dist/umd/ffmpeg-core.js",
-      });
+      // await ffmpeg.load({
+      //   coreURL: "/assets/core-mt/package/dist/umd/ffmpeg-core.js",
+      // });
+      // New FFmpeg Start
+      await ffmpeg.load({ coreURL, wasmURL });
+      // New FFmpeg End
       setConvertionMessage(`Loading complete...`);
     }
     const name = "toConvert.webm";
