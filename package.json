@@ -24,6 +24,7 @@
     "yadl-aws-icons": "^1.0.0",
     "yadl-azure-icons": "^1.0.0",
     "yadl-gcp-icons": "^1.0.0",
+    "yadl-preview": "file:../yadl-ui/packages/yadl-preview",
     "yadl-skill-icons": "^1.0.0",
     "yadl-themeisle-icons": "^1.0.0",
     "yadl-ui": "file:../yadl-ui",
