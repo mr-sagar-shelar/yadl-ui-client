@@ -25,7 +25,7 @@ function App() {
       id: "icon-0",
       position: {
         x: 0,
-        y: 110,
+        y: 180,
       },
       data: {
         icon: "skillIconActivityPub",
@@ -33,10 +33,82 @@ function App() {
       },
       type: "icon",
     },
+    {
+      id: "icon-1",
+      position: {
+        x: 50,
+        y: 180,
+      },
+      data: {
+        icon: "aWSAppIntegrationAPIGateway",
+        category: "aws",
+      },
+      type: "icon",
+    },
+    {
+      id: "icon-2",
+      position: {
+        x: 100,
+        y: 180,
+      },
+      data: {
+        icon: "azureAiMachineLearningBatchAI",
+        category: "azure",
+      },
+      type: "icon",
+    },
+    {
+      id: "icon-3",
+      position: {
+        x: 150,
+        y: 180,
+      },
+      data: {
+        icon: "gCPAdministration",
+        category: "gcp",
+      },
+      type: "icon",
+    },
+    {
+      id: "icon-4",
+      position: {
+        x: 150,
+        y: 180,
+      },
+      data: {
+        icon: "skillIconAbleton",
+        category: "skill",
+      },
+      type: "icon",
+    },
+    {
+      id: "icon-5",
+      position: {
+        x: 200,
+        y: 180,
+      },
+      data: {
+        icon: "themeisle1",
+        category: "themeisle",
+      },
+      type: "icon",
+    },
+    {
+      id: "icon-6",
+      position: {
+        x: 250,
+        y: 180,
+      },
+      data: {
+        icon: "undrawPhoneCall",
+        category: "undraw",
+      },
+      type: "icon",
+    },
   ];
   const edges = [
     { id: "1-2", source: "1", target: "2", label: "to the", type: "step" },
-      { id: "1-icon-0", source: "1", target: "icon-0", type: "step" },
+    { id: "1-icon-0", source: "1", target: "icon-0", type: "step" },
   ];
 
   // let iconNamePresent = AwsIconNames[icon] != undefined;
@@ -65,11 +137,9 @@ function App() {
       {/* <div style={{ height: "100vh", width: "100%" }}>
         <YadlPreview nodes={nodes} edges={edges} />
       </div> */}
-      <div style={{height: "100vh"}}>
-
-      <Preview nodes={nodes} edges={edges} />
+      <div style={{ height: "100vh" }}>
+        <Preview nodes={nodes} edges={edges} />
       </div>
-
     </div>
   );
 }

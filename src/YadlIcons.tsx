@@ -10,16 +10,9 @@ import * as ThemeisleIcons from "yadl-themeisle-icons";
 import { ThemeisleIconNames } from "yadl-themeisle-icons";
 import * as UndrawIcons from "yadl-undraw-icons";
 import { UndrawIconNames } from "yadl-undraw-icons";
-import { Preview } from "yadl-preview";
 import React from "react";
 
 function YadlIcons() {
-  // console.log(` AWS Count = ${Object.keys(AwsIconNames).length}`)
-  // console.log(` AzureIconNames Count = ${Object.keys(AzureIconNames).length}`)
-  // console.log(` GCPIconNames Count = ${Object.keys(GCPIconNames).length}`)
-  // console.log(` SkillIconNames Count = ${Object.keys(SkillIconNames).length}`)
-  // console.log(` ThemeisleIconNames Count = ${Object.keys(ThemeisleIconNames).length}`)
-  // console.log(` UndrawIconNames Count = ${Object.keys(UndrawIconNames).length}`)
   const AWSIcon = AWSIcons[AwsIconNames["aWSAppIntegrationAPIGateway"].icon];
   const AzureIcon = AzureIcons[AzureIconNames["azureAiMachineLearningBatchAI"].icon];
   const GcpIcon = GCPIcons[GCPIconNames["gCPAdministration"].icon];
