@@ -21,7 +21,13 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.0.17",
-    "yadl-ui": "file:../yadl-ui"
+    "yadl-aws-icons": "^1.0.0",
+    "yadl-azure-icons": "^1.0.0",
+    "yadl-gcp-icons": "^1.0.0",
+    "yadl-skill-icons": "^1.0.0",
+    "yadl-themeisle-icons": "^1.0.0",
+    "yadl-ui": "file:../yadl-ui",
+    "yadl-undraw-icons": "^1.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

@@ -1,17 +1,37 @@
 import "./App.css";
 import "./animate.min.css";
 import "@xyflow/react/dist/style.css";
-import "yadl-ui/dist/yadl-ui.css";
-import {
-  Button,
-  AWS,
-  GCPCertificateManager,
-  YadlPreview,
-  // YadlExport,
-} from "yadl-ui";
-import YadlExport from "./components/ui/YadlExport";
+// import "yadl-ui/dist/yadl-ui.css";
+// import { YadlPreview } from "yadl-ui";
+// import YadlExport from "./components/ui/YadlExport";
+import * as AWSIcons from "yadl-aws-icons";
+import { AwsIconNames } from "yadl-aws-icons";
+import * as AzureIcons from "yadl-azure-icons";
+import { AzureIconNames } from "yadl-azure-icons";
+import * as GCPIcons from "yadl-gcp-icons";
+import { GCPIconNames } from "yadl-gcp-icons";
+import * as SkillIcons from "yadl-skill-icons";
+import { SkillIconNames  } from "yadl-skill-icons";
+import * as ThemeisleIcons from "yadl-themeisle-icons";
+import { ThemeisleIconNames } from "yadl-themeisle-icons";
+import * as UndrawIcons from "yadl-undraw-icons";
+import { UndrawIconNames } from "yadl-undraw-icons";
 
 function App() {
+  // console.log(` AWS Count = ${Object.keys(AwsIconNames).length}`)
+  // console.log(` AzureIconNames Count = ${Object.keys(AzureIconNames).length}`)
+  // console.log(` GCPIconNames Count = ${Object.keys(GCPIconNames).length}`)
+  // console.log(` SkillIconNames Count = ${Object.keys(SkillIconNames).length}`)
+  // console.log(` ThemeisleIconNames Count = ${Object.keys(ThemeisleIconNames).length}`)
+  // console.log(` UndrawIconNames Count = ${Object.keys(UndrawIconNames).length}`)
+  const AWSIcon = AWSIcons[AwsIconNames["aWSAppIntegrationAPIGateway"].icon];
+  const AzureIcon = AzureIcons[AzureIconNames["azureAiMachineLearningBatchAI"].icon];
+  const GcpIcon = GCPIcons[GCPIconNames["gCPAdministration"].icon];
+  const SkillIcon = SkillIcons[SkillIconNames["skillIconAbleton"].icon];
+  const ThemeisleIcon = ThemeisleIcons[ThemeisleIconNames["themeisle1"].icon];
+  const UndrawIcon = UndrawIcons[UndrawIconNames["undrawPhoneCall"].icon];
+
+
   const nodes = [
     {
       id: "1",
@@ -42,8 +62,21 @@ function App() {
     { id: "1-2", source: "1", target: "2", label: "to the", type: "step" },
     { id: "1-icon-0", source: "1", target: "icon-0", type: "step" },
   ];
+
+  // let iconNamePresent = AwsIconNames[icon] != undefined;
+  //     if (iconNamePresent) {
+  //       console.error(`AWS Present = ${iconNamePresent}`)
+  //       // @ts-ignore
+  //       // Icon = AWSIcons[AwsIconNames[icon].icon] ?? null;
+  //     }
   return (
     <div>
+      <AWSIcon width={100} height={100} />
+      <AzureIcon width={100} height={100} />
+      <GcpIcon width={100} height={100} />
+      <SkillIcon width={100} height={100} />
+      <ThemeisleIcon width={500} height={500} />
+      <UndrawIcon width={500} height={500} />
       {/* <h1 class="text-3xl font-bold underline">Hello world 12!</h1>
       <Button />
       <AWS />
@@ -55,10 +88,9 @@ function App() {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-row gap-4 w-full">
+      {/* <div className="flex flex-row gap-4 w-full">
         <YadlExport width={800} height={900} />
-        {/* <YadlExportNewVersion width={400} height={800} style /> */}
-      </div>
+      </div> */}
       {/* <div style={{ height: "100vh", width: "100%" }}>
         <YadlPreview nodes={nodes} edges={edges} />
       </div> */}
