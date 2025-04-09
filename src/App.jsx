@@ -105,6 +105,100 @@ function App() {
       },
       type: "icon",
     },
+    {
+      id: "box-12",
+      position: {
+        x: 300,
+        y: -100,
+      },
+      data: {
+        name: "Box 1",
+        component: "box1",
+        props: {
+          height: 284,
+          width: 256,
+          title: "UI / UX Creative Desing",
+          caption:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fuga adipisicing elit",
+        },
+      },
+      type: "box",
+    },
+    {
+      id: "text-1",
+      position: {
+        x: 0,
+        y: -20,
+      },
+      data: {
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        classes:
+          "mx-auto break-words truncate bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent",
+        component: "Text",
+        props: {
+          height: 284,
+          width: 256,
+        },
+      },
+      type: "text",
+    },
+    {
+      id: "text-2",
+      position: {
+        x: 0,
+        y: -40,
+      },
+      data: {
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        classes:
+          "mx-auto break-words truncate bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent",
+        component: "Text",
+        fontFamily: "Segoe UI Symbol",
+        props: {
+          height: 284,
+          width: 256,
+        },
+      },
+      type: "text",
+    },
+    {
+      id: "text-3",
+      position: {
+        x: 0,
+        y: -60,
+      },
+      data: {
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        classes:
+          "mx-auto break-words truncate bg-gradient-to-r from-violet-600  via-red-500 to-indigo-600 bg-clip-text text-transparent",
+        component: "Text",
+        fontFamily: "Segoe UI Symbol",
+        props: {
+          height: 284,
+          width: 256,
+        },
+      },
+      type: "text",
+    },
+    {
+      id: "text-4",
+      position: {
+        x: 0,
+        y: -80,
+      },
+      data: {
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        classes:
+          "border-indigo-600 mx-auto break-words truncate bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent",
+        component: "Text",
+        fontFamily: "Segoe UI Symbol",
+        props: {
+          height: 284,
+          width: 256,
+        },
+      },
+      type: "text",
+    },
   ];
   const edges = [
     { id: "1-2", source: "1", target: "2", label: "to the", type: "step" },
