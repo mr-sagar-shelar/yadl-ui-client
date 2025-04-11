@@ -7,6 +7,7 @@ import "yadl-preview/dist/yadl-preview.css";
 // import YadlExport from "./components/ui/YadlExport";
 // import YadlIcons from "./YadlIcons"
 import { Preview } from "yadl-preview";
+import { Editor } from "yadl-editor";
 
 function App() {
   const nodes = [
@@ -201,8 +202,8 @@ function App() {
     },
   ];
   const edges = [
-    { id: "1-2", source: "1", target: "2", label: "to the", type: "step" },
-    { id: "1-icon-0", source: "1", target: "icon-0", type: "step" },
+    { id: "1-2", source: "1", target: "2", label: "to the 1", type: "step" },
+    { id: "1-icon-0", source: "1", target: "icon-0", type: "step1" },
   ];
 
   // let iconNamePresent = AwsIconNames[icon] != undefined;
@@ -231,8 +232,9 @@ function App() {
       {/* <div style={{ height: "100vh", width: "100%" }}>
         <YadlPreview nodes={nodes} edges={edges} />
       </div> */}
-      <div style={{ height: "100vh" }}>
-        <Preview nodes={nodes} edges={edges} />
+      <div>
+        {/* <Preview nodes={nodes} edges={edges} /> */}
+        <Editor />
       </div>
     </div>
   );
