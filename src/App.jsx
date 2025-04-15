@@ -1,13 +1,13 @@
 import "./App.css";
-import "./animate.min.css";
-import "@xyflow/react/dist/style.css";
-import "yadl-preview/dist/yadl-preview.css";
+// import "./animate.min.css";
+// import "@xyflow/react/dist/style.css";
+// import "yadl-preview/dist/yadl-preview.css";
 // import "yadl-ui/dist/yadl-ui.css";
 // import { YadlPreview } from "yadl-ui";
 // import YadlExport from "./components/ui/YadlExport";
 // import YadlIcons from "./YadlIcons"
-import { Preview } from "yadl-preview";
-import { Editor } from "yadl-editor";
+// import { Preview } from "yadl-preview";
+import { YadlEditor } from "yadl-editor";
 
 function App() {
   const nodes = [
@@ -234,7 +234,26 @@ function App() {
       </div> */}
       <div>
         {/* <Preview nodes={nodes} edges={edges} /> */}
-        <Editor />
+        <YadlEditor
+          onChange={(code) => {
+            console.log(code);
+          }}
+          code={`
+aws-icon aWSAnalyticsAthena
+
+azure-icon azureAiMachineLearningAIStudio
+
+gcp-icon gCPAiHub
+
+skill-icon skillIconAWS
+
+themeisle-icon themeisle95
+
+undraw-icon undrawAbsorbedIn
+
+text "Hello World" { fontFamily "undraw" classes "text-2xl" }
+`}
+        />
       </div>
     </div>
   );
