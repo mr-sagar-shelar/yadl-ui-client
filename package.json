@@ -16,6 +16,7 @@
     "@fix-webm-duration/fix": "^1.0.1",
     "@tailwindcss/vite": "^4.0.17",
     "@xyflow/react": "^12.5.1",
+    "allotment": "^1.20.3",
     "daisyui": "^5.0.9",
     "get-blob-duration": "^1.2.0",
     "langium-ast-helper": "^0.1.2",

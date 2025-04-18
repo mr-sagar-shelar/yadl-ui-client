@@ -8,8 +8,12 @@ import "./App.css";
 // import YadlIcons from "./YadlIcons"
 // import { Preview } from "yadl-preview";
 import { YadlEditor } from "yadl-editor";
+import { Allotment } from "allotment";
+import "./allotment.css";
+import { useState } from "react";
 
 function App() {
+  const [yadlNodesAndEdges, setYadlNodesAndEdges] = useState("");
   const nodes = [
     {
       id: "1",
@@ -232,11 +236,11 @@ function App() {
       {/* <div style={{ height: "100vh", width: "100%" }}>
         <YadlPreview nodes={nodes} edges={edges} />
       </div> */}
-      <div>
-        {/* <Preview nodes={nodes} edges={edges} /> */}
+      {/* <Preview nodes={nodes} edges={edges} /> */}
+      {/* <div>
         <YadlEditor
           onChange={(code) => {
-            console.log(code);
+            console.warn(`^^^^^^^^ ${JSON.stringify(code, null, 2)}`);
           }}
           code={`
 aws-icon aWSAnalyticsAthena
@@ -254,6 +258,38 @@ undraw-icon undrawAbsorbedIn
 text "Hello World" { fontFamily "undraw" classes "text-2xl" }
 `}
         />
+      </div> */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr" }}>
+        <div style={{ minHeight: "100vh", width: "100%" }}>
+          <Allotment>
+            <YadlEditor
+              onChange={(code) => {
+                // console.warn(`^^^^^^^^ ${JSON.stringify(code, null, 2)}`);
+                setYadlNodesAndEdges(code);
+              }}
+              code={`
+aws-icon aWSAnalyticsAthena
+
+azure-icon azureAiMachineLearningAIStudio
+
+gcp-icon gCPAiHub
+
+skill-icon skillIconAWS
+
+themeisle-icon themeisle95
+
+undraw-icon undrawAbsorbedIn
+
+text "Hello World" { fontFamily "undraw" classes "text-2xl" }
+`}
+            />
+            <div style={{ overflow: "scroll" }} className="code-preview">
+              <div>
+                <pre>{JSON.stringify(yadlNodesAndEdges, null, 2)}</pre>
+              </div>
+            </div>
+          </Allotment>
+        </div>
       </div>
     </div>
   );
