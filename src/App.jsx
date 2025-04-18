@@ -15,194 +15,218 @@ import { useState } from "react";
 function App() {
   const [yadlNodesAndEdges, setYadlNodesAndEdges] = useState("");
   const nodes = [
+    // {
+    //   id: "1",
+    //   data: { label: "Hello" },
+    //   position: { x: 0, y: 0 },
+    //   type: "input",
+    // },
+    // {
+    //   id: "2",
+    //   data: { label: "World" },
+    //   position: { x: 100, y: 100 },
+    // },
+    // {
+    //   id: "icon-0",
+    //   position: {
+    //     x: 0,
+    //     y: 180,
+    //   },
+    //   data: {
+    //     icon: "skillIconActivityPub",
+    //     category: "skill",
+    //   },
+    //   type: "icon",
+    // },
+    // {
+    //   id: "icon-1",
+    //   position: {
+    //     x: 200,
+    //     y: 100,
+    //   },
+    //   data: {
+    //     icon: "aWSAnalyticsAthena",
+    //     category: "aws",
+    //   },
+    //   type: "icon",
+    // },
+    // {
+    //   id: "icon-2",
+    //   position: {
+    //     x: 100,
+    //     y: 180,
+    //   },
+    //   data: {
+    //     icon: "azureAiMachineLearningBatchAI",
+    //     category: "azure",
+    //   },
+    //   type: "icon",
+    // },
+    // {
+    //   id: "icon-3",
+    //   position: {
+    //     x: 150,
+    //     y: 180,
+    //   },
+    //   data: {
+    //     icon: "gCPAdministration",
+    //     category: "gcp",
+    //   },
+    //   type: "icon",
+    // },
+    // {
+    //   id: "icon-4",
+    //   position: {
+    //     x: 150,
+    //     y: 180,
+    //   },
+    //   data: {
+    //     icon: "skillIconAbleton",
+    //     category: "skill",
+    //   },
+    //   type: "icon",
+    // },
+    // {
+    //   id: "icon-5",
+    //   position: {
+    //     x: 200,
+    //     y: 180,
+    //   },
+    //   data: {
+    //     icon: "themeisle1",
+    //     category: "themeisle",
+    //   },
+    //   type: "icon",
+    // },
+    // {
+    //   id: "icon-6",
+    //   position: {
+    //     x: 250,
+    //     y: 180,
+    //   },
+    //   data: {
+    //     icon: "undrawPhoneCall",
+    //     category: "undraw",
+    //   },
+    //   type: "icon",
+    // },
+    // {
+    //   id: "box-12",
+    //   position: {
+    //     x: 300,
+    //     y: -100,
+    //   },
+    //   data: {
+    //     name: "Box 1",
+    //     component: "box1",
+    //     props: {
+    //       height: 284,
+    //       width: 256,
+    //       title: "UI / UX Creative Desing",
+    //       caption:
+    //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fuga adipisicing elit",
+    //     },
+    //   },
+    //   type: "box",
+    // },
+    // {
+    //   id: "text-1",
+    //   position: {
+    //     x: 0,
+    //     y: -20,
+    //   },
+    //   data: {
+    //     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     classes:
+    //       "mx-auto break-words truncate bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent",
+    //     component: "Text",
+    //     props: {
+    //       height: 284,
+    //       width: 256,
+    //     },
+    //   },
+    //   type: "text",
+    // },
+    // {
+    //   id: "text-2",
+    //   position: {
+    //     x: 0,
+    //     y: -40,
+    //   },
+    //   data: {
+    //     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     classes:
+    //       "mx-auto break-words truncate bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent",
+    //     component: "Text",
+    //     fontFamily: "Segoe UI Symbol",
+    //     props: {
+    //       height: 284,
+    //       width: 256,
+    //     },
+    //   },
+    //   type: "text",
+    // },
+    // {
+    //   id: "text-3",
+    //   position: {
+    //     x: 0,
+    //     y: -60,
+    //   },
+    //   data: {
+    //     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     classes:
+    //       "mx-auto break-words truncate bg-gradient-to-r from-violet-600  via-red-500 to-indigo-600 bg-clip-text text-transparent",
+    //     component: "Text",
+    //     fontFamily: "Segoe UI Symbol",
+    //     props: {
+    //       height: 284,
+    //       width: 256,
+    //     },
+    //   },
+    //   type: "text",
+    // },
+    // {
+    //   id: "text-4",
+    //   position: {
+    //     x: 0,
+    //     y: -80,
+    //   },
+    //   data: {
+    //     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    //     classes:
+    //       "border-indigo-600 mx-auto break-words truncate bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent",
+    //     component: "Text",
+    //     fontFamily: "Segoe UI Symbol",
+    //     props: {
+    //       height: 284,
+    //       width: 256,
+    //     },
+    //   },
+    //   type: "text",
+    // },
     {
-      id: "1",
-      data: { label: "Hello" },
-      position: { x: 0, y: 0 },
-      type: "input",
-    },
-    {
-      id: "2",
-      data: { label: "World" },
-      position: { x: 100, y: 100 },
-    },
-    {
-      id: "icon-0",
-      position: {
-        x: 0,
-        y: 180,
-      },
+      id: "aws-1",
       data: {
-        icon: "skillIconActivityPub",
-        category: "skill",
-      },
-      type: "icon",
-    },
-    {
-      id: "icon-1",
-      position: {
-        x: 50,
-        y: 180,
-      },
-      data: {
-        icon: "aWSAppIntegrationAPIGateway",
+        icon: "aWSAnalyticsAthena",
         category: "aws",
       },
+      position: {
+        x: 0,
+        y: 100,
+      },
       type: "icon",
     },
     {
-      id: "icon-2",
-      position: {
-        x: 100,
-        y: 180,
-      },
+      id: "azure-1",
       data: {
-        icon: "azureAiMachineLearningBatchAI",
+        icon: "azureAiMachineLearningAIStudio",
         category: "azure",
       },
-      type: "icon",
-    },
-    {
-      id: "icon-3",
-      position: {
-        x: 150,
-        y: 180,
-      },
-      data: {
-        icon: "gCPAdministration",
-        category: "gcp",
-      },
-      type: "icon",
-    },
-    {
-      id: "icon-4",
-      position: {
-        x: 150,
-        y: 180,
-      },
-      data: {
-        icon: "skillIconAbleton",
-        category: "skill",
-      },
-      type: "icon",
-    },
-    {
-      id: "icon-5",
-      position: {
-        x: 200,
-        y: 180,
-      },
-      data: {
-        icon: "themeisle1",
-        category: "themeisle",
-      },
-      type: "icon",
-    },
-    {
-      id: "icon-6",
-      position: {
-        x: 250,
-        y: 180,
-      },
-      data: {
-        icon: "undrawPhoneCall",
-        category: "undraw",
-      },
-      type: "icon",
-    },
-    {
-      id: "box-12",
-      position: {
-        x: 300,
-        y: -100,
-      },
-      data: {
-        name: "Box 1",
-        component: "box1",
-        props: {
-          height: 284,
-          width: 256,
-          title: "UI / UX Creative Desing",
-          caption:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fuga adipisicing elit",
-        },
-      },
-      type: "box",
-    },
-    {
-      id: "text-1",
       position: {
         x: 0,
-        y: -20,
+        y: 200,
       },
-      data: {
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        classes:
-          "mx-auto break-words truncate bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent",
-        component: "Text",
-        props: {
-          height: 284,
-          width: 256,
-        },
-      },
-      type: "text",
-    },
-    {
-      id: "text-2",
-      position: {
-        x: 0,
-        y: -40,
-      },
-      data: {
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        classes:
-          "mx-auto break-words truncate bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent",
-        component: "Text",
-        fontFamily: "Segoe UI Symbol",
-        props: {
-          height: 284,
-          width: 256,
-        },
-      },
-      type: "text",
-    },
-    {
-      id: "text-3",
-      position: {
-        x: 0,
-        y: -60,
-      },
-      data: {
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        classes:
-          "mx-auto break-words truncate bg-gradient-to-r from-violet-600  via-red-500 to-indigo-600 bg-clip-text text-transparent",
-        component: "Text",
-        fontFamily: "Segoe UI Symbol",
-        props: {
-          height: 284,
-          width: 256,
-        },
-      },
-      type: "text",
-    },
-    {
-      id: "text-4",
-      position: {
-        x: 0,
-        y: -80,
-      },
-      data: {
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        classes:
-          "border-indigo-600 mx-auto break-words truncate bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent",
-        component: "Text",
-        fontFamily: "Segoe UI Symbol",
-        props: {
-          height: 284,
-          width: 256,
-        },
-      },
-      type: "text",
+      type: "icon",
     },
   ];
   const edges = [
@@ -269,23 +293,29 @@ text "Hello World" { fontFamily "undraw" classes "text-2xl" }
                 setYadlNodesAndEdges(code);
               }}
               code={`
-aws-icon aWSAnalyticsAthena
+aws-icon aWSAnalyticsAthena { position { x: 0 y: 100 } }
 
-azure-icon azureAiMachineLearningAIStudio
+azure-icon azureAiMachineLearningAIStudio  { position { x: 0 y: 200 } }
 
-gcp-icon gCPAiHub
+// gcp-icon gCPAiHub
 
-skill-icon skillIconAWS
+// skill-icon skillIconAWS
 
-themeisle-icon themeisle95
+// themeisle-icon themeisle95
 
-undraw-icon undrawAbsorbedIn
+// undraw-icon undrawAbsorbedIn
 
-text "Hello World" { fontFamily "undraw" classes "text-2xl" }
+// text "Hello World" { fontFamily "undraw" classes "text-2xl" }
 `}
             />
+            {/* <div>
+              <pre>{JSON.stringify(yadlNodesAndEdges)}</pre>
+            </div> */}
             <div style={{ height: "100vh", width: "100%" }}>
-              <Preview nodes={nodes} edges={edges} />
+              <Preview
+                nodes={yadlNodesAndEdges.nodes}
+                edges={yadlNodesAndEdges.edges}
+              />
             </div>
           </Allotment>
         </div>
