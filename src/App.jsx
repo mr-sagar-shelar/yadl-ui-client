@@ -1,12 +1,12 @@
 import "./App.css";
 // import "./animate.min.css";
-// import "@xyflow/react/dist/style.css";
-// import "yadl-preview/dist/yadl-preview.css";
+import "@xyflow/react/dist/style.css";
+import "yadl-preview/dist/yadl-preview.css";
 // import "yadl-ui/dist/yadl-ui.css";
 // import { YadlPreview } from "yadl-ui";
 // import YadlExport from "./components/ui/YadlExport";
 // import YadlIcons from "./YadlIcons"
-// import { Preview } from "yadl-preview";
+import { Preview } from "yadl-preview";
 import { YadlEditor } from "yadl-editor";
 import { Allotment } from "allotment";
 import "./allotment.css";
@@ -236,7 +236,9 @@ function App() {
       {/* <div style={{ height: "100vh", width: "100%" }}>
         <YadlPreview nodes={nodes} edges={edges} />
       </div> */}
-      {/* <Preview nodes={nodes} edges={edges} /> */}
+      {/* <div style={{ height: "100vh", width: "100%" }}>
+        <Preview nodes={nodes} edges={edges} />
+      </div> */}
       {/* <div>
         <YadlEditor
           onChange={(code) => {
@@ -264,7 +266,6 @@ text "Hello World" { fontFamily "undraw" classes "text-2xl" }
           <Allotment>
             <YadlEditor
               onChange={(code) => {
-                // console.warn(`^^^^^^^^ ${JSON.stringify(code, null, 2)}`);
                 setYadlNodesAndEdges(code);
               }}
               code={`
@@ -283,10 +284,8 @@ undraw-icon undrawAbsorbedIn
 text "Hello World" { fontFamily "undraw" classes "text-2xl" }
 `}
             />
-            <div style={{ overflow: "scroll" }} className="code-preview">
-              <div>
-                <pre>{JSON.stringify(yadlNodesAndEdges, null, 2)}</pre>
-              </div>
+            <div style={{ height: "100vh", width: "100%" }}>
+              <Preview nodes={nodes} edges={edges} />
             </div>
           </Allotment>
         </div>
